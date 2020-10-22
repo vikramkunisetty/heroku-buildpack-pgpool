@@ -69,7 +69,7 @@ config-gen() {
   POSTGRES_URLS=${PGPOOL_URLS:-DATABASE_URL}
   i=0
 
-  cp /app/vendor/pgpool/pgpool.conf.sample /app/vendor/pgpool/pgpool.conf
+  cp /app/vendor/pgpool_conf/pgpool.conf.sample /app/vendor/pgpool/pgpool.conf
   cp /app/vendor/pgpool/pool_hba.conf.sample /app/vendor/pgpool/pool_hba.conf
 
   for POSTGRES_URL in $POSTGRES_URLS
