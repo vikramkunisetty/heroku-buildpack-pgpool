@@ -78,11 +78,6 @@ config-gen() {
 
     if [ "$i" -eq "0" ]; then
       cat >> /app/vendor/pgpool/pgpool.conf <<EOF
-# streaming check
-sr_check_user = '$DB_USER'
-sr_check_password = '$DB_PASS'
-sr_check_database = '$DB_NAME'
-
 # health check
 health_check_user = '$DB_USER'
 health_check_password = '$DB_PASS'
@@ -90,6 +85,7 @@ health_check_database = '$DB_NAME'
 
 #backend flag
 backend_flag$i = 'ALWAYS_MASTER'
+
 EOF
     fi
 
