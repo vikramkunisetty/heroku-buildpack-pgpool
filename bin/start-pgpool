@@ -83,11 +83,6 @@ sr_check_user = '$DB_USER'
 sr_check_password = '$DB_PASS'
 sr_check_database = '$DB_NAME'
 
-# health check
-health_check_user = '$DB_USER'
-health_check_password = '$DB_PASS'
-health_check_database = '$DB_NAME'
-
 backend_flag$i = 'ALWAYS_MASTER'
 EOF
     fi
@@ -97,6 +92,11 @@ EOF
 backend_hostname$i = '$DB_HOST'
 backend_port$i = $DB_PORT
 backend_weight$i = 1
+
+# health check for backend$i
+health_check_user$i = '$DB_USER'
+health_check_password$i = '$DB_PASS'
+health_check_database$i = '$DB_NAME'
 EOF
 
     pg_md5 -m -u "$DB_USER" -f /app/vendor/pgpool/pgpool.conf "$DB_PASS"
