@@ -70,6 +70,7 @@ config-gen() {
   i=0
 
   cp /app/vendor/pgpool_conf/pgpool.conf.sample /app/vendor/pgpool/pgpool.conf
+  cp /app/vendor/pgpool_conf/failback_command.sh /app/vendor/pgpool/failback.sh
   cp /app/vendor/pgpool/pool_hba.conf.sample /app/vendor/pgpool/pool_hba.conf
 
   for POSTGRES_URL in $POSTGRES_URLS
